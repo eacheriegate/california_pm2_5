@@ -7,9 +7,9 @@ import numpy as np
 import os
 from geopandas.tools import clip
 
-proj_dir = r"C:/Users/eache/.vscode/projects/invisible-air"
-pollut_path = os.path.join(proj_dir, "data/pm2_5", "calenviroscreen40shpf2021shp", "CES4 Final Shapefile.shp")
-road_path = os.path.join(proj_dir, "data/roads", "tl_2021_us_primaryroads", "tl_2021_us_primaryroads.shp")
+proj_dir = r"C:\Users\eache\.vscode\projects\california_pm2_5"
+pollut_path = os.path.join(proj_dir, "data\pm2_5", "calenviroscreen40shpf2021shp", "CES4 Final Shapefile.shp")
+road_path = os.path.join(proj_dir, "data\roads", "tl_2021_us_primaryroads", "tl_2021_us_primaryroads.shp")
 field = "PM2_5"
 
 gdf = gpd.read_file(pollut_path).to_crs(epsg=3310)
@@ -73,9 +73,9 @@ ax_legend.axis('off')
 
 legend = ax_legend.legend(
     handles=handles,
-    title="PM2.5 (μg/m³)",
+    title="PM2.5 (μg/m³) by Census Tract",
     loc='center',
-    frameon=True,
+    frameon=False,
     edgecolor="black",
     framealpha=1,
     fontsize=9,
